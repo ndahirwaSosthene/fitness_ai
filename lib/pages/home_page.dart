@@ -1,4 +1,4 @@
-import 'package:fitness_ai/utils/home_workout_card.dart';
+import 'package:fitness_ai/utils/dashboard.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -26,16 +26,14 @@ class _HomePageState extends State<HomePage> {
           padding: const EdgeInsets.all(16.0),
           child: ListView(
             children: [
-              SizedBox(
-                height: 50,
-              ),
+              SizedBox(height: 50),
               Text(
                 "Samsung Health",
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 27, fontWeight: FontWeight.bold),
               ),
               Text(
-                "Last synched at $time",
+                "Hello Last synched at $time",
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 15, fontWeight: FontWeight.w400),
               ),
@@ -87,7 +85,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ],
               ),
-              HomeWorkoutCard()
+              Dashboard(),
             ],
           ),
         ),
