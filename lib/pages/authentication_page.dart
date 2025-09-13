@@ -11,7 +11,9 @@ class AuthenticationPage extends StatelessWidget {
   final passwordController = TextEditingController();
 
   // sign user in
-  void signUserIn() {}
+  void signUserIn() {
+    
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -19,21 +21,22 @@ class AuthenticationPage extends StatelessWidget {
       backgroundColor: Colors.grey[300],
       body: SafeArea(
         child: Center(
-          child: ListView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(height: 50),
 
               //logo
               Icon(Icons.lock, size: 100),
 
-              SizedBox(height: 50),
+              SizedBox(height: 30),
               // welcome back, you've been missed!
               Text(
                 "Welcome back you've been missed!",
                 style: TextStyle(color: Colors.grey, fontSize: 16),
               ),
 
-              SizedBox(height: 50),
+              SizedBox(height: 10),
 
               // username textfield
               MyTextfield(
@@ -83,7 +86,7 @@ class AuthenticationPage extends StatelessWidget {
                   Expanded(child: Divider(thickness: 0.5, color: Colors.grey)),
                 ],
               ),
-              SizedBox(height: 30,),
+              SizedBox(height: 30),
               // google + applee sign ing buttons
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,

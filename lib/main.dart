@@ -1,4 +1,6 @@
 import 'package:fitness_ai/pages/authentication_page.dart';
+import 'package:fitness_ai/pages/gallery.dart';
+import 'package:fitness_ai/pages/home_page.dart';
 import 'package:fitness_ai/pages/splash_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: AuthenticationPage(),
+      home: Gallery(),
     );
   }
 }

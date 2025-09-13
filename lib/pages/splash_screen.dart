@@ -1,4 +1,4 @@
-import 'package:fitness_ai/pages/home_page.dart';
+import 'package:fitness_ai/pages/authentication_page.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -16,7 +16,7 @@ class _SplashScreenState extends State<SplashScreen> {
       Navigator.pushReplacement(
         // ignore: use_build_context_synchronously
         context,
-        MaterialPageRoute(builder: (context) => HomePage()),
+        MaterialPageRoute(builder: (context) => AuthenticationPage()),
       );
     });
   }
