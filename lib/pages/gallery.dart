@@ -28,20 +28,28 @@ class Gallery extends StatelessWidget {
                           Expanded(
                             child: Container(
                               decoration: BoxDecoration(
-                                color: Colors.pink,
+                                color: const Color.fromARGB(255, 154, 180, 222),
                                 borderRadius: BorderRadius.circular(10),
                               ),
-                              child: Center(child: Text('Small 1')),
+                              child: Center(
+                                child: ImageBox(
+                                  imagePath: 'assets/images/g_pic_1.jpg',
+                                ),
+                              ),
                             ),
                           ),
                           SizedBox(height: 4),
                           Expanded(
                             child: Container(
                               decoration: BoxDecoration(
-                                color: const Color.fromARGB(255, 30, 209, 233),
+                                color: const Color.fromARGB(255, 154, 180, 222),
                                 borderRadius: BorderRadius.circular(10),
                               ),
-                              child: Center(child: Text('Small 2')),
+                              child: Center(
+                                child: ImageBox(
+                                  imagePath: 'assets/images/g_pic_1.jpg',
+                                ),
+                              ),
                             ),
                           ),
                         ],
@@ -53,10 +61,14 @@ class Gallery extends StatelessWidget {
                       flex: 2,
                       child: Container(
                         decoration: BoxDecoration(
-                          color: const Color.fromARGB(255, 233, 182, 30),
+                          color: const Color.fromARGB(255, 154, 180, 222),
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        child: Center(child: Text('Large Image')),
+                        child: Center(
+                          child: ImageBox(
+                            imagePath: 'assets/images/g_pic_1.jpg',
+                          ),
+                        ),
                       ),
                     ),
                   ],
@@ -71,10 +83,14 @@ class Gallery extends StatelessWidget {
                       flex: 1,
                       child: Container(
                         decoration: BoxDecoration(
-                          color: Colors.greenAccent,
+                          color: const Color.fromARGB(255, 154, 180, 222),
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        child: Center(child: Text("Item")),
+                        child: Center(
+                          child: ImageBox(
+                            imagePath: 'assets/images/g_pic_1.jpg',
+                          ),
+                        ),
                       ),
                     ),
                     SizedBox(width: 5),
@@ -82,10 +98,14 @@ class Gallery extends StatelessWidget {
                       flex: 1,
                       child: Container(
                         decoration: BoxDecoration(
-                          color: Colors.greenAccent,
+                          color: const Color.fromARGB(255, 154, 180, 222),
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        child: Center(child: Text("Item")),
+                        child: Center(
+                          child: ImageBox(
+                            imagePath: 'assets/images/g_pic_1.jpg',
+                          ),
+                        ),
                       ),
                     ),
                     SizedBox(width: 5),
@@ -93,10 +113,14 @@ class Gallery extends StatelessWidget {
                       flex: 1,
                       child: Container(
                         decoration: BoxDecoration(
-                          color: Colors.greenAccent,
+                          color: const Color.fromARGB(255, 154, 180, 222),
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        child: Center(child: Text("Item")),
+                        child: Center(
+                          child: ImageBox(
+                            imagePath: 'assets/images/g_pic_1.jpg',
+                          ),
+                        ),
                       ),
                     ),
                   ],
@@ -112,10 +136,14 @@ class Gallery extends StatelessWidget {
                       flex: 2,
                       child: Container(
                         decoration: BoxDecoration(
-                          color: const Color.fromARGB(255, 233, 182, 30),
+                          color: const Color.fromARGB(255, 154, 180, 222),
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        child: Center(child: Text('Large Image')),
+                        child: Center(
+                          child: ImageBox(
+                            imagePath: 'assets/images/g_pic_1.jpg',
+                          ),
+                        ),
                       ),
                     ),
                     SizedBox(width: 3),
@@ -127,10 +155,14 @@ class Gallery extends StatelessWidget {
                           Expanded(
                             child: Container(
                               decoration: BoxDecoration(
-                                color: Colors.pink,
+                                color: const Color.fromARGB(255, 154, 180, 222),
                                 borderRadius: BorderRadius.circular(10),
                               ),
-                              child: Center(child: Text('Small 1')),
+                              child: Center(
+                                child: ImageBox(
+                                  imagePath: 'assets/images/g_pic_2.jpg',
+                                ),
+                              ),
                             ),
                           ),
                         ],
@@ -148,10 +180,14 @@ class Gallery extends StatelessWidget {
                       flex: 1,
                       child: Container(
                         decoration: BoxDecoration(
-                          color: Colors.greenAccent,
+                          color: const Color.fromARGB(255, 154, 180, 222),
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        child: Center(child: Text("Item")),
+                        child: Center(
+                          child: ImageBox(
+                            imagePath: 'assets/images/g_pic_1.jpg',
+                          ),
+                        ),
                       ),
                     ),
                     SizedBox(width: 5),
@@ -159,10 +195,14 @@ class Gallery extends StatelessWidget {
                       flex: 1,
                       child: Container(
                         decoration: BoxDecoration(
-                          color: Colors.greenAccent,
+                          color: const Color.fromARGB(255, 154, 180, 222),
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        child: Center(child: Text("Item")),
+                        child: Center(
+                          child: ImageBox(
+                            imagePath: 'assets/images/g_pic_1.jpg',
+                          ),
+                        ),
                       ),
                     ),
                     SizedBox(width: 5),
@@ -170,10 +210,14 @@ class Gallery extends StatelessWidget {
                       flex: 1,
                       child: Container(
                         decoration: BoxDecoration(
-                          color: Colors.greenAccent,
+                          color: const Color.fromARGB(255, 154, 180, 222),
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        child: Center(child: Text("Item")),
+                        child: Center(
+                          child: ImageBox(
+                            imagePath: 'assets/images/g_pic_1.jpg',
+                          ),
+                        ),
                       ),
                     ),
                   ],
@@ -188,10 +232,14 @@ class Gallery extends StatelessWidget {
                       flex: 1,
                       child: Container(
                         decoration: BoxDecoration(
-                          color: Colors.greenAccent,
+                          color: const Color.fromARGB(255, 154, 180, 222),
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        child: Center(child: Text("Item")),
+                        child: Center(
+                          child: ImageBox(
+                            imagePath: 'assets/images/g_pic_1.jpg',
+                          ),
+                        ),
                       ),
                     ),
                     SizedBox(width: 5),
@@ -199,10 +247,14 @@ class Gallery extends StatelessWidget {
                       flex: 1,
                       child: Container(
                         decoration: BoxDecoration(
-                          color: Colors.greenAccent,
+                          color: const Color.fromARGB(255, 154, 180, 222),
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        child: Center(child: Text("Item")),
+                        child: Center(
+                          child: ImageBox(
+                            imagePath: 'assets/images/g_pic_1.jpg',
+                          ),
+                        ),
                       ),
                     ),
                     SizedBox(width: 5),
@@ -210,10 +262,14 @@ class Gallery extends StatelessWidget {
                       flex: 1,
                       child: Container(
                         decoration: BoxDecoration(
-                          color: Colors.greenAccent,
+                          color: const Color.fromARGB(255, 154, 180, 222),
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        child: Center(child: Text("Item")),
+                        child: Center(
+                          child: ImageBox(
+                            imagePath: 'assets/images/g_pic_1.jpg',
+                          ),
+                        ),
                       ),
                     ),
                   ],
@@ -224,19 +280,23 @@ class Gallery extends StatelessWidget {
                 height: 200,
                 child: Row(
                   children: [
-                    // Large image (right)
+                    // similar size image 
                     Expanded(
                       flex: 1,
                       child: Container(
                         decoration: BoxDecoration(
-                          color: const Color.fromARGB(255, 233, 182, 30),
+                          color: const Color.fromARGB(255, 154, 180, 222),
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        child: Center(child: Text('1 Image')),
+                        child: Center(
+                          child: ImageBox(
+                            imagePath: 'assets/images/g_pic_1.jpg',
+                          ),
+                        ),
                       ),
                     ),
                     SizedBox(width: 3),
-                    // Small images (left)
+                    // Similar size images
                     Expanded(
                       flex: 1,
                       child: Column(
@@ -244,10 +304,14 @@ class Gallery extends StatelessWidget {
                           Expanded(
                             child: Container(
                               decoration: BoxDecoration(
-                                color: Colors.pink,
+                                color: const Color.fromARGB(255, 154, 180, 222),
                                 borderRadius: BorderRadius.circular(10),
                               ),
-                              child: Center(child: Text('2 Image')),
+                              child: Center(
+                                child: ImageBox(
+                                  imagePath: 'assets/images/g_pic_1.jpg',
+                                ),
+                              ),
                             ),
                           ),
                         ],
