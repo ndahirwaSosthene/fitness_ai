@@ -20,76 +20,120 @@ class _TodoPageState extends State<TodoPage> {
   TextEditingController _taskNameController = TextEditingController();
   TextEditingController _taskDescController = TextEditingController();
 
-  void _showAddTaskDialog() async {
-    Task? newTask = await showDialog<Task>(
+  void _showAddTaskBottomSheet() async {
+    Task? newTask = await showModalBottomSheet<Task>(
       context: context,
+      isScrollControlled: true, // Important for keyboard
       builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text('Add New Task'),
-          content: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              TextField(
-                controller: _taskNameController,
-                decoration: InputDecoration(
-                  hintText: 'Enter task name',
-                  border: OutlineInputBorder(),
-                ),
-                autofocus: false,
-              ),
-              SizedBox(height: 10),
-              TextField(
-                controller: _taskDescController,
-                decoration: InputDecoration(
-                  hintText: 'Enter task description',
-                  border: OutlineInputBorder(),
-                ),
-                autofocus: false,
-              ),
-            ],
+        return Padding(
+          padding: EdgeInsets.only(
+            bottom: MediaQuery.of(
+              context,
+            ).viewInsets.bottom, // Keyboard spacing
           ),
-          actions: [
-            TextButton(
-              onPressed: () {
-                _taskNameController.clear();
-                Navigator.pop(context);
-              },
-              child: Text('Cancel'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                String taskName = _taskNameController.text.trim();
-                String taskDesc = _taskDescController.text.trim();
+          child: Container(
+            padding: EdgeInsets.all(20),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Add New Task',
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(height: 20),
 
-                if (taskName.isNotEmpty) {
-                  // Instead of combining strings, create a Task container
-                  Task newTask = Task(
-                    name: taskName,
-                    description: taskDesc.isNotEmpty
-                        ? taskDesc
-                        : 'No description',
-                  );
+                // Same TextFields
+                TextField(
+                  controller: _taskNameController,
+                  decoration: InputDecoration(
+                    hintText: 'Enter task name',
+                    border: OutlineInputBorder(),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.green),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 10),
+                TextField(
+                  controller: _taskDescController,
+                  decoration: InputDecoration(
+                    hintText: 'Enter task description',
+                    border: OutlineInputBorder(),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.green),
+                    ),
+                  ),
+                ),
 
-                  _taskNameController.clear();
-                  _taskDescController.clear();
-                  Navigator.pop(
-                    context,
-                    newTask,
-                  ); // Return Task instead of String
-                } else {
-                  Navigator.pop(context);
-                }
-              },
-              child: Text('Add Task'),
+                SizedBox(height: 20),
+
+                // Buttons in a row
+                Row(
+                  children: [
+                    Expanded(
+                      child: TextButton(
+                        onPressed: () {
+                          _taskNameController.clear();
+                          _taskDescController.clear();
+                          Navigator.pop(context);
+                        },
+                        child: Text(
+                          'Cancel',
+                          style: TextStyle(
+                            color: const Color.fromARGB(255, 186, 60, 60),
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 10),
+                    Expanded(
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          padding: EdgeInsets.all(5),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          backgroundColor: Colors.green,
+                          foregroundColor: Colors.white,
+                          textStyle: TextStyle(color: Colors.white),
+                          maximumSize: Size(100, 50),
+                        ),
+                        onPressed: () {
+                          // Same logic as AlertDialog
+                          String taskName = _taskNameController.text.trim();
+                          String taskDesc = _taskDescController.text.trim();
+                          if (taskName.isNotEmpty) {
+                            Task newTask = Task(
+                              name: taskName,
+                              description: taskDesc.isNotEmpty
+                                  ? taskDesc
+                                  : 'No description',
+                            );
+
+                            _taskNameController.clear();
+                            _taskDescController.clear();
+                            Navigator.pop(context, newTask);
+                          } else {
+                            Navigator.pop(context);
+                          }
+                        },
+                        child: Text('Add Task'),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
             ),
-          ],
+          ),
         );
       },
     );
 
+    // Same result handling
     if (newTask != null) {
       setState(() {
-        tasks.add(newTask); // Add Task object to list
+        tasks.add(newTask);
       });
     }
   }
@@ -117,7 +161,7 @@ class _TodoPageState extends State<TodoPage> {
                     ),
                     Spacer(),
                     ElevatedButton(
-                      onPressed: _showAddTaskDialog,
+                      onPressed: _showAddTaskBottomSheet,
                       style: ElevatedButton.styleFrom(
                         padding: EdgeInsets.all(5),
                         shape: RoundedRectangleBorder(
@@ -147,7 +191,8 @@ class _TodoPageState extends State<TodoPage> {
                   itemBuilder: (context, index) {
                     return TodoTile(
                       task: tasks[index].name, // Extract name from Task
-                      description: tasks[index].description, // Extract description from Task
+                      description: tasks[index]
+                          .description, // Extract description from Task
                     );
                   },
                 ),
