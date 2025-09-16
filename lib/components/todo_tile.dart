@@ -15,12 +15,10 @@ class TodoTile extends StatefulWidget {
 
 class _TodoTileState extends State<TodoTile> {
   bool isChecked = false;
-  Color sidecolor = Colors.red;
 
   void onClick(bool? value) {
     setState(() {
       isChecked = value ?? false;
-      sidecolor =  Colors.green;
     });
   }
 
@@ -40,14 +38,20 @@ class _TodoTileState extends State<TodoTile> {
             Container(
               width: 8,
               decoration: BoxDecoration(
-                color: sidecolor,
+                color: isChecked ? Colors.green : Colors.red,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(12),
                   bottomLeft: Radius.circular(12),
                 ),
               ),
             ),
-            Checkbox(value: isChecked, onChanged: onClick),
+            Checkbox(
+              value: isChecked,
+              fillColor: WidgetStateProperty.all(
+                isChecked ? Colors.green : null
+              ),
+              onChanged: onClick,
+            ),
             Padding(
               padding: const EdgeInsets.only(top: 10),
               child: Container(
@@ -59,6 +63,12 @@ class _TodoTileState extends State<TodoTile> {
                       widget.task,
                       style: TextStyle(
                         fontSize: 14,
+                        color: isChecked
+                            ? const Color.fromARGB(255, 168, 171, 172)
+                            : null,
+                        decoration: isChecked
+                            ? TextDecoration.lineThrough
+                            : null,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
