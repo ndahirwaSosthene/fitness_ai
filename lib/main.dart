@@ -1,4 +1,4 @@
-import 'package:fitness_ai/pages/profile_page.dart';
+import 'package:fitness_ai/pages/workout_programs.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ProfilePage(),
+      home: WorkoutPrograms()
     );
   }
 }
