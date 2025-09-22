@@ -129,6 +129,7 @@ I'm in the **"Intermediate Beginner"** phase:
 **"@flutter dart"** = Practical Dart application in Flutter context
 **"@flutter debug"** = Help with errors and debugging strategies
 **"@flutter next"** = Recommend next widget/concept based on your progress
+**"@flutter note"** = Write notes on the new things that I am taught. For eg: If I asked how to ensure null safety and I tell you to take the nots, you write them in a notes folder.
 
 ## Motivation & Realistic Expectations
 

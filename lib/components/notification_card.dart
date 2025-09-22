@@ -5,39 +5,52 @@ class NotificationCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(2.0),
-      child: Container(
-        padding: EdgeInsets.all(10),
-        height: 80,
-        width: 50,
-        decoration: BoxDecoration(
-          color: const Color.fromARGB(255, 230, 219, 219),
-          borderRadius: BorderRadius.circular(10),
-        ),
-        child: Row(
-          children: [
-            CircleAvatar(backgroundColor: Colors.amber, radius: 23),
-            SizedBox(width: 10),
-            Column(
+    return Container(
+      padding: EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: const Color.fromARGB(255, 231, 217, 195),
+        borderRadius: BorderRadius.circular(16),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.05),
+            blurRadius: 10,
+            offset: Offset(0, 2),
+          ),
+        ],
+      ),
+      child: Row(
+        children: [
+          CircleAvatar(
+            radius: 25,
+            backgroundColor: Colors.white,
+            child: Icon(
+              Icons.person,
+              size: 32,
+              color: const Color.fromARGB(255, 210, 136, 25),
+            ),
+          ),
+          SizedBox(width: 16),
+          Expanded(
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
                   'Invite Freinds',
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                ),
-                Text(
-                  'Earn rewards for every freind you bring!',
                   style: TextStyle(
-                    fontSize: 14,
-                    color: const Color.fromARGB(255, 95, 94, 94),
+                    fontSize: 17,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black87,
                   ),
+                ),
+                SizedBox(height: 4),
+                Text(
+                  'Earn rewards for every freinds you bring!',
+                  style: TextStyle(fontSize: 13, color: Colors.grey[600]),
                 ),
               ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
