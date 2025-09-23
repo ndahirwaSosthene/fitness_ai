@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class NotificationCard extends StatelessWidget {
+  // final double? borderWidth;
   const NotificationCard({super.key});
 
   @override
@@ -10,6 +11,7 @@ class NotificationCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: const Color.fromARGB(255, 231, 217, 195),
         borderRadius: BorderRadius.circular(16),
+        // border: Border.all(width: borderWidth ?? 0),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withValues(alpha: 0.05),

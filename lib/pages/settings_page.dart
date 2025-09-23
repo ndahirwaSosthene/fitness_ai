@@ -11,6 +11,7 @@ class SettingsPage extends StatefulWidget {
 }
 
 class _SettingsPageState extends State<SettingsPage> {
+  // double _borderWidth = 0;
   bool _faceIdEnabled = false;
   bool _smartAuthEnabled = true;
   bool _notificationsEnabled = true;
@@ -39,7 +40,29 @@ class _SettingsPageState extends State<SettingsPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Notification Section
-            NotificationCard(),
+            GestureDetector(
+              onTap: () {
+                print('Single Tap');
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text('Tapped on notification')),
+                );
+              },
+              onDoubleTap: () {
+                print('Double Tap');
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text('Double Tapped on notification')),
+                );
+              },
+              onLongPress: () {
+                print('Long press');
+                // setState(() {
+                //   _borderWidth = 1;
+                // });
+              },
+              onVerticalDragUpdate: (details) =>
+                  print('Vertical Drag: ${details.delta.dy}'),
+              child: NotificationCard(),
+            ),
             SizedBox(height: 24),
 
             // Account Section
