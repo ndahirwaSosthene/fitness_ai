@@ -11,6 +11,10 @@ class SettingsPage extends StatefulWidget {
 }
 
 class _SettingsPageState extends State<SettingsPage> {
+  double _scale = 1.0; // Initial scale
+  final double _scaledUp = 1.2; // Scale when tapped
+  final Duration _animationDuration = const Duration(milliseconds: 200);
+
   // double _borderWidth = 0;
   bool _faceIdEnabled = false;
   bool _smartAuthEnabled = true;
@@ -42,26 +46,33 @@ class _SettingsPageState extends State<SettingsPage> {
             // Notification Section
             GestureDetector(
               onTap: () {
-                print('Single Tap');
+                // print('Single Tap');
                 ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text('Tapped on notification')),
+                  SnackBar(
+                    content: Text('Tapped on notification'),
+                    duration: Duration(seconds: 1),
+                  ),
                 );
               },
               onDoubleTap: () {
-                print('Double Tap');
+                // print('Double Tap');
                 ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text('Double Tapped on notification')),
+                  SnackBar(
+                    content: Text('Double Tapped on notification'),
+                    duration: Duration(seconds: 1),
+                  ),
                 );
               },
-              onLongPress: () {
-                print('Long press');
-                // setState(() {
-                //   _borderWidth = 1;
-                // });
-              },
               onVerticalDragUpdate: (details) =>
+                  // ignore: avoid_print
                   print('Vertical Drag: ${details.delta.dy}'),
-              child: NotificationCard(),
+              child: Material(
+                color: Colors.transparent,
+                child: InkWell(
+                  highlightColor: Colors.yellow,
+                  child: NotificationCard(),
+                ),
+              ),
             ),
             SizedBox(height: 24),
 
@@ -242,31 +253,44 @@ class _SettingsPageState extends State<SettingsPage> {
   }
 
   Widget _buildSignOutButton() {
-    return Container(
-      width: double.infinity,
-      padding: EdgeInsets.symmetric(horizontal: 4),
-      child: ElevatedButton(
-        onPressed: () => _showSignOutDialog(context),
-        style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.red[50],
-          foregroundColor: Colors.red[700],
-          elevation: 0,
-          padding: EdgeInsets.symmetric(vertical: 16),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
-            side: BorderSide(color: Colors.red[200]!),
-          ),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(Icons.logout, size: 20),
-            SizedBox(width: 8),
-            Text(
-              'Sign Out',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        splashColor: Colors.red,
+        highlightColor: Colors.redAccent,
+        onTap: _handleTap,
+        onDoubleTap: _handleDoubleTap,
+        child: AnimatedScale(
+          scale: 1,
+          duration: Duration(seconds: 1),
+          child: Container(
+            width: double.infinity,
+            padding: EdgeInsets.symmetric(horizontal: 4),
+            child: ElevatedButton(
+              onPressed: () => _showSignOutDialog(context),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.red[50],
+                foregroundColor: Colors.red[700],
+                elevation: 0,
+                padding: EdgeInsets.symmetric(vertical: 16),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                  side: BorderSide(color: Colors.red[200]!),
+                ),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.logout, size: 20),
+                  SizedBox(width: 8),
+                  Text(
+                    'Sign Out',
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                  ),
+                ],
+              ),
             ),
-          ],
+          ),
         ),
       ),
     );
@@ -334,5 +358,21 @@ class _SettingsPageState extends State<SettingsPage> {
         ],
       ),
     );
+  }
+
+  void _handleTap() {
+    setState(() {
+      _scale = _scale == 1.0
+          ? _scaledUp
+          : 1.0; // Toggle between normal and scaled
+    });
+  }
+
+  void _handleDoubleTap() {
+    setState(() {
+      _scale = _scale == 1.0
+          ? _scaledUp + 0.3
+          : 1.0; // Toggle between normal and scaled
+    });
   }
 }

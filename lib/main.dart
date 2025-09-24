@@ -1,4 +1,6 @@
-import 'package:fitness_ai/pages/inkwell_example.dart';
+import 'package:fitness_ai/pages/program_details.dart';
+import 'package:fitness_ai/pages/settings_page.dart';
+import 'package:fitness_ai/pages/workout_programs.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,7 +15,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: InkwellExample(),
+      home: WorkoutPrograms(),
+      initialRoute: '/',
+      routes: {
+        '/workout programs' : (context) => WorkoutPrograms(),
+        '/program details' : (context) => ProgramDetails(),
+        '/settings' : (context) => SettingsPage(),
+      },
     );
   }
 }

@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 
-class NotificationCard extends StatelessWidget {
+class NotificationCard extends StatefulWidget {
   // final double? borderWidth;
   const NotificationCard({super.key});
 
+  @override
+  State<NotificationCard> createState() => _NotificationCardState();
+}
+
+class _NotificationCardState extends State<NotificationCard> {
   @override
   Widget build(BuildContext context) {
     return Container(

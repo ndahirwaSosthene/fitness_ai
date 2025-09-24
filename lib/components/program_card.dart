@@ -1,3 +1,4 @@
+import 'package:fitness_ai/pages/program_details.dart';
 import 'package:flutter/material.dart';
 
 class ProgramCard extends StatelessWidget {
@@ -86,7 +87,13 @@ class ProgramCard extends StatelessWidget {
                       ),
                       Spacer(),
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamed(
+                            context,
+                            '/program details',
+                            arguments: productName,
+                          );
+                        },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.green,
                           foregroundColor: Colors.white,
@@ -94,7 +101,7 @@ class ProgramCard extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10),
                           ),
                         ),
-                        child: Text('Buy'),
+                        child: Text('View'),
                       ),
                     ],
                   ),
