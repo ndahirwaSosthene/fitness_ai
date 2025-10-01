@@ -1,3 +1,4 @@
+import 'package:fitness_ai/pages/home_page.dart';
 import 'package:fitness_ai/pages/program_details.dart';
 import 'package:fitness_ai/pages/settings_page.dart';
 import 'package:fitness_ai/pages/workout_programs.dart';
@@ -15,9 +16,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: WorkoutPrograms(),
       initialRoute: '/',
       routes: {
+        '/' : (context) => HomePage(),
         '/workout programs' : (context) => WorkoutPrograms(),
         '/program details' : (context) => ProgramDetails(),
         '/settings' : (context) => SettingsPage(),

@@ -1,4 +1,3 @@
-import 'package:fitness_ai/pages/program_details.dart';
 import 'package:flutter/material.dart';
 
 class ProgramCard extends StatelessWidget {
