@@ -13,7 +13,7 @@ class SettingsPage extends StatefulWidget {
 class _SettingsPageState extends State<SettingsPage> {
   double _scale = 1.0; // Initial scale
   final double _scaledUp = 1.2; // Scale when tapped
-  final Duration _animationDuration = const Duration(milliseconds: 200);
+  // final Duration _animationDuration = const Duration(milliseconds: 200);
 
   // double _borderWidth = 0;
   bool _faceIdEnabled = false;

@@ -18,10 +18,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
-        '/' : (context) => HomePage(),
-        '/workout programs' : (context) => WorkoutPrograms(),
-        '/program details' : (context) => ProgramDetails(),
-        '/settings' : (context) => SettingsPage(),
+        '/': (context) => HomePage(),
+        '/workout programs': (context) => WorkoutPrograms(),
+        '/program details': (context) => ProgramDetails(),
+        '/settings': (context) => SettingsPage(),
       },
     );
   }
