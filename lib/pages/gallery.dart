@@ -16,7 +16,7 @@ class Gallery extends StatelessWidget {
                 "My Gallery",
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
               ),
-              Container(
+              SizedBox(
                 height: 200,
                 child: Row(
                   children: [
@@ -75,7 +75,7 @@ class Gallery extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 4),
-              Container(
+              SizedBox(
                 height: 120,
                 child: Row(
                   children: [
@@ -127,7 +127,7 @@ class Gallery extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 4),
-              Container(
+              SizedBox(
                 height: 200,
                 child: Row(
                   children: [
@@ -172,7 +172,7 @@ class Gallery extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 4),
-              Container(
+              SizedBox(
                 height: 120,
                 child: Row(
                   children: [
@@ -224,7 +224,7 @@ class Gallery extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 4),
-              Container(
+              SizedBox(
                 height: 120,
                 child: Row(
                   children: [
@@ -276,7 +276,7 @@ class Gallery extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 4),
-              Container(
+              SizedBox(
                 height: 200,
                 child: Row(
                   children: [

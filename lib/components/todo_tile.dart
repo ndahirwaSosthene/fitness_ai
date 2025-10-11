@@ -78,7 +78,7 @@ class _TodoTileState extends State<TodoTile> {
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 10),
-                child: Container(
+                child: SizedBox(
                   width: 200,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,

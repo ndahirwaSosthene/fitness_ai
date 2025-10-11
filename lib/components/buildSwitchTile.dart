@@ -45,7 +45,7 @@ class Buildswitchtile extends StatelessWidget {
       trailing: Switch(
         value: value,
         onChanged: onChanged,
-        activeColor: Colors.blue[600],
+        activeThumbColor: Colors.blue[600],
       ),
     );
   }

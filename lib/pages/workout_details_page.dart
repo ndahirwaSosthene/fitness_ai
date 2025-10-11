@@ -9,8 +9,8 @@ class WorkoutDetailPage extends StatelessWidget {
     required this.imagePath,
     required this.title,
     required this.subtitle,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
   
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class WorkoutDetailPage extends StatelessWidget {
             flexibleSpace: FlexibleSpaceBar(
               title: Text(title),
               background: Hero(
-                tag: 'workout-${imagePath}', // Same tag as in the card
+                tag: 'workout-$imagePath', // Same tag as in the card
                 child: Image.asset(
                   imagePath,
                   fit: BoxFit.cover,
