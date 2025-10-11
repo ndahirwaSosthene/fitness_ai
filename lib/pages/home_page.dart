@@ -1,5 +1,7 @@
 import 'package:fitness_ai/components/workout_card.dart';
+import 'package:fitness_ai/pages/quotes_page.dart';
 import 'package:fitness_ai/pages/workout_details_page.dart';
+import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -51,7 +53,15 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
         actions: [
-          IconButton(onPressed: () {}, icon: Icon(Icons.notifications)),
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => QuotesPage()),
+              );
+            },
+            icon: Icon(FluentIcons.comment_quote_16_filled),
+          ),
         ],
       ),
       body: Padding(

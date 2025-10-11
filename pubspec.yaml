@@ -63,6 +63,7 @@ flutter:
   assets:
     - assets/images/fit.png
     - assets/images/guy.png
+    - assets/images/quote.png
     - assets/images/google_logo.png
     - assets/images/apple_logo.png
     - assets/images/g_pic_1.jpg
