@@ -14,22 +14,22 @@ class _HomePageState extends State<HomePage> {
   final List<Map<String, String>> workouts = [
     {
       'image': 'assets/images/g_pic_1.jpg',
-      'title': 'Full Body Workout',
+      'title': 'FULL BODY WORKOUT',
       'subtitle': '30 min • Intermediate',
     },
     {
       'image': 'assets/images/g_pic_2.jpg',
-      'title': 'Upper Body Focus',
+      'title': 'UPPER BODY FOCUS',
       'subtitle': '25 min • Beginner',
     },
     {
       'image': 'assets/images/g_pic_3.jpg',
-      'title': 'Core Challenge',
+      'title': 'CORE CHALLENGE',
       'subtitle': '20 min • Advanced',
     },
     {
       'image': 'assets/images/g_pic_4.jpg',
-      'title': 'HIIT Training',
+      'title': 'HIIT TRAINING',
       'subtitle': '35 min • All levels',
     },
   ];
