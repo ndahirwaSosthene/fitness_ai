@@ -1,5 +1,5 @@
-import 'package:fitness_ai/components/buildListTile.dart';
-import 'package:fitness_ai/components/buildSwitchTile.dart';
+import 'package:fitness_ai/components/build_list_tile.dart';
+import 'package:fitness_ai/components/build_switch_tile.dart';
 import 'package:fitness_ai/components/notification_card.dart';
 import 'package:flutter/material.dart';
 
