@@ -1,8 +1,10 @@
 import 'package:fitness_ai/components/workout_card.dart';
+import 'package:fitness_ai/pages/calculator_page.dart';
 import 'package:fitness_ai/pages/quotes_page.dart';
 import 'package:fitness_ai/pages/workout_details_page.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -66,35 +68,60 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: GridView.builder(
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            childAspectRatio: 0.7, // More vertical cards
-            crossAxisSpacing: 10,
-            mainAxisSpacing: 10,
-          ),
-          itemCount: workouts.length,
-          itemBuilder: (BuildContext context, int index) {
-            final workout = workouts[index];
-            return WorkoutCard(
-              imagePath: workout['image']!,
-              title: workout['title']!,
-              subtitle: workout['subtitle']!,
-              vertical: true,
-              onTap: () {
+        child: ListView(
+          children: [
+            SizedBox(
+              height: 600,
+              child: GridView.builder(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  childAspectRatio: 0.7, // More vertical cards
+                  crossAxisSpacing: 10,
+                  mainAxisSpacing: 10,
+                ),
+                itemCount: workouts.length,
+                itemBuilder: (BuildContext context, int index) {
+                  final workout = workouts[index];
+                  return WorkoutCard(
+                    imagePath: workout['image']!,
+                    title: workout['title']!,
+                    subtitle: workout['subtitle']!,
+                    vertical: true,
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => WorkoutDetailPage(
+                            imagePath: workout['image']!,
+                            title: workout['title']!,
+                            subtitle: workout['subtitle']!,
+                          ),
+                        ),
+                      );
+                    },
+                  );
+                },
+              ),
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blueAccent,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              ),
+              onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(
-                    builder: (context) => WorkoutDetailPage(
-                      imagePath: workout['image']!,
-                      title: workout['title']!,
-                      subtitle: workout['subtitle']!,
-                    ),
-                  ),
+                  MaterialPageRoute(builder: (context) => CalculatorPage()),
                 );
               },
-            );
-          },
+              child: Text(
+                'Calculator',
+                style: GoogleFonts.goldman(color: Colors.white),
+              ),
+            ),
+          ],
         ),
       ),
     );
